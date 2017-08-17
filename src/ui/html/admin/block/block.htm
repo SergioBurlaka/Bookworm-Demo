@@ -1,0 +1,80 @@
+<script type="text/ng-template" id="html/admin/block/block.htm">
+
+    <h1> block </h1>
+    <!--{{bc.block}} <br>-->
+
+    <div class="blockEdit">
+        <div class="fieldWrap">
+            <div class="nameField">
+                Enter a new name:
+                <input  id="blockInput"  type="text" ng-model="bc.block.name">
+            </div>
+
+            <div class="descriptionField" >
+                Enter a new description:
+                <textarea name="" id="" cols="30" rows="10" ng-model="bc.block.description" ></textarea>
+            </div>
+
+            <div class="buttonWrapper">
+                <button ng-click="bc.updateBlock()">Update</button>
+                <!--<button ng-click="bc.init()">Cancel</button>-->
+                <a href="#!/admin/block" class="button">Cancel</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <h1>Tests of this block</h1>
+
+
+    <div class="wrapTable">
+        <table >
+            <!--<caption>Tests</caption>-->
+            <tr>
+                <td>answer</td><td>question</td><td>Action</td>
+            </tr>
+            <tr ng-repeat=" x in bc.testsByBlockId.slice(((bc.bigCurrentPage-1)*bc.itemsPerPage), ((bc.bigCurrentPage)*bc.itemsPerPage))">
+
+                <td>{{x.answer}}</td><td>{{x.question}}</td>
+                <td>
+                    <button  class="editButton" ng-click="bc.goToTestEdit(x.id)">Edit</button>
+                    <button  class="deleteButton" ng-click="bc.openModalWindow(x.id)">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" ng-model="bc.newTest.answer"></td>
+                <td><input type="text" ng-model="bc.newTest.question"> </td>
+                <td><button class="addButton" ng-click="bc.addTestByBlockId(bc.block.id)"> Add test</button></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div class="wrapPagination">
+        View <select ng-model="bc.viewby" ng-change="bc.setItemsPerPage(bc.viewby)">
+        <option>3</option>
+        <option>5</option>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+    </select> records at a time.
+
+        <ul uib-pagination
+            total-items="bc.bigTotalItems"
+            ng-model="bc.bigCurrentPage"
+            max-size="bc.maxSize"
+            class="pagination-sm"
+            boundary-links="true"
+            force-ellipses="true"
+            items-per-page="bc.itemsPerPage">
+
+        </ul>
+    </div>
+
+
+
+</script>

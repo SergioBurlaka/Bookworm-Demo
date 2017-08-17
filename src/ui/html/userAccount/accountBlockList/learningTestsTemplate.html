@@ -1,0 +1,5 @@
+<div class="testError">  <p ng-show="isError">Wrong answer</p>  </div>
+<p  class="testQuestion">   {{question}} {{hint}}  </p>
+<span contenteditable="true" id="testAnswer"   class="baseInput"></span> <br>
+<button id="next" class="startTests nextButton" ng-disabled="disabledNextButton" ng-click="nextTest()"> next</button>
+<button id="hint" class="startTests hintButton" ng-click="showHint()"> hint</button>

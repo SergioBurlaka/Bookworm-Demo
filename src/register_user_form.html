@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Login</title>
+
+
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.js"
+            integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+            crossorigin="anonymous"></script>
+
+    <script src = "js/user_registr_validation.js">  </script>
+
+
+
+    <link rel="stylesheet" href="css/lib/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/registration_user_form.css">
+
+    <script type="text/javascript" src="ui/js/lib/pnotify/pnotify.custom.min.js"></script>
+    <link rel="stylesheet" href="ui/js/lib/pnotify/pnotify.custom.min.css">
+
+
+
+
+</head>
+<body>
+
+
+<form id="userRegistration" novalidate>
+
+    <div id="topic">
+        <div class="inscription">
+            <p class="form_name"> Registration Form </p>
+            <p class="form_comment"> Fill in the form below </p>
+        </div>
+
+        <i class="fa fa-pencil" aria-hidden="true"></i>
+
+    </div>
+
+
+  <div class="main">
+
+      <p id="loginError" class="loginError" >  </p>
+      <input id="login" name="login" placeholder="  Login" />  <br>
+
+      <p id="passwordError" class="passwordError" >  </p>
+      <input id="password" name="password" type="password" placeholder=" Password" /> <br>
+
+      <p id="emailError" class="error" >  </p>
+      <input id="email" name="email" type="email" placeholder="Email address" /> <br>
+
+      <button  id="submit" disabled="disabled">Submit</button>
+  </div>
+
+</form>
+
+
+</body>
+</html>

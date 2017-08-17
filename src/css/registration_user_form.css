@@ -1,0 +1,162 @@
+body {
+    background-color: #f4f4f4;
+}
+
+
+
+body * {
+    font-family: 'Arial', Arial, Helvetica, sans-serif;
+    color: #718b99;
+}
+
+
+
+
+#userRegistration{
+    background-color: #f4f4f4;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    width: 400px;
+    height: 431px;
+    margin: auto;
+    position: relative;
+
+}
+
+#topic{
+    background-color: #ffffff;
+    height: 14%;
+    margin-top: 0;
+    padding: 20px;
+    border-bottom: 1px solid #c0c0c0;
+}
+
+.inscription{
+    width: 70%;
+    top: 0;
+    left: 0;
+    display: inline-block;
+
+}
+
+#userRegistration input{
+    width: 360px;
+    height: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+}
+
+/*#submit {*/
+    /*margin: 0 20px 20px 20px;*/
+    /*padding: 5px 14px;*/
+
+/*}*/
+
+
+#userRegistration p{
+   display: block;
+}
+
+.form_name{
+    font-size: 25px;
+    margin: 0;
+}
+
+
+.fa-pencil{
+    font-size: 50px ;
+    float: right;
+}
+
+
+
+
+.form_comment{
+    font-size: 16px;
+    margin:  15px 0 0 0;
+}
+
+
+
+button{
+    border: 1px solid #488f4c;
+    background: #57b163   none;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 5px 14px;
+    width: 100px;
+    font-size: 17px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+
+button:hover{
+    border: 1px solid #488f4c;
+    background: #5bbf6d;
+}
+
+button:disabled {
+    border: 1px solid #c2c2c2;
+    background: #d8d8d8 none;
+}
+
+
+.main{
+    margin-top: 10px;
+    position: relative;
+    width: 400px;
+    height: 317px;
+}
+
+
+#login{
+    position: absolute;
+    top: 42px ;
+    right: 20px;
+
+}
+#password{
+    position: absolute;
+    top: 126px ;
+    right: 20px;
+
+}
+#email{
+    position: absolute;
+    top: 209px ;
+    right: 20px;
+
+}
+
+.passwordError, .error, .loginError{
+    font-size: 14px;
+    color: #c9422e;
+}
+
+
+.loginError{
+    position: absolute;
+    margin: 0 20px;
+    /*top: 1px;*/
+    bottom: 287px;
+}
+
+.passwordError{
+    position: absolute;
+    margin: 0 20px;
+    /*top: 94px;*/
+    bottom: 201px;
+}
+
+.error{
+    position: absolute;
+    margin: 0 20px;
+    /*top: 185px;*/
+    bottom: 119px;
+
+}

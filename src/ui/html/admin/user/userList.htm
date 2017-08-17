@@ -1,0 +1,116 @@
+<script type="text/ng-template" id="html/admin/user/userList.htm">
+
+    <h1> users List </h1>
+
+
+    <div class="wrapTable">
+        <form name="addUser" novalidate>
+
+            <table>
+                <!--<caption>Users list</caption>-->
+                <tr>
+                    <th ng-click="ulc.sortBy('login')"><p>login</p>
+                        <div class="wrapTriangle">
+                            <i class="fa fa-caret-up"
+                               ng-class="ulc.addTriangleClass == 1 && ulc.columnName == 'login' ? 'saturatedTriangle ': ''  "></i>
+                            <i class="fa fa-caret-down"
+                               ng-class="ulc.addTriangleClass == 0  && ulc.columnName == 'login' ? 'saturatedTriangle ': ''  "></i>
+                        </div>
+
+                    </th>
+                    <th ng-click="ulc.sortBy('name')"><p>name</p>
+                        <div class="wrapTriangle">
+                            <i class="fa fa-caret-up"
+                               ng-class="ulc.addTriangleClass == 1 && ulc.columnName == 'name' ? 'saturatedTriangle ': ''  "></i>
+                            <i class="fa fa-caret-down"
+                               ng-class="ulc.addTriangleClass == 0  && ulc.columnName == 'name' ? 'saturatedTriangle ': ''  "></i>
+                        </div>
+                    </th>
+                    <th ng-click="ulc.sortBy('last_name')"><p>last_name</p>
+                        <div class="wrapTriangle">
+                            <i class="fa fa-caret-up"
+                               ng-class="ulc.addTriangleClass == 1 && ulc.columnName == 'last_name' ? 'saturatedTriangle ': ''  "></i>
+                            <i class="fa fa-caret-down"
+                               ng-class="ulc.addTriangleClass == 0  && ulc.columnName == 'last_name' ? 'saturatedTriangle ': ''  "></i>
+                        </div>
+                    </th>
+                    <th ng-click="ulc.sortBy('e-mail')"><p>e-mail</p>
+                        <div class="wrapTriangle">
+                            <i class="fa fa-caret-up"
+                               ng-class="ulc.addTriangleClass == 1 && ulc.columnName == 'e-mail' ? 'saturatedTriangle ': ''  "></i>
+                            <i class="fa fa-caret-down"
+                               ng-class="ulc.addTriangleClass == 0  && ulc.columnName == 'e-mail' ? 'saturatedTriangle ': ''  "></i>
+                        </div>
+                    </th>
+                    <th>Action</th>
+                </tr>
+                <tr ng-repeat=" x in ulc.users
+            | orderBy : ulc.columnName : false : ulc.comparator
+            | direction: ulc.direction
+            |slice: ((ulc.bigCurrentPage-1)*ulc.itemsPerPage): ((ulc.bigCurrentPage)*ulc.itemsPerPage) ">
+                    <td>{{x.login}}</td>
+                    <td>{{x.name}}</td>
+                    <td>{{x.last_name}}</td>
+                    <td>{{x.email}}</td>
+
+                    <td>
+                        <button class="editButton" ng-click="ulc.goToBlockEdit(x.id)">Edit</button>
+                        <!--<a href="#!admin/user/{{x.id}}" class="button">Edit</a>-->
+                        <button class="deleteButton" ng-click="ulc.openModalWindow(x.id, x.name)">Delete</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><input type="text" ng-pattern="/^[a-zA-Z\s]*$/" name="login"
+                               ng-model="ulc.newUser.login" ng-blur="ulc.checkLogIn()" required>
+                        <p style="color: red" ng-show="addUser.login.$error.loginUnique"> that Login exist </p>
+                    </td>
+                    <td><input type="text" name="name" ng-model="ulc.newUser.name" required>
+                        <p style="color: red" ng-show="addUser.name.$error.required && ulc.submitted "> field have to be
+                            required </p>
+                    </td>
+                    <td><input type="text" name="last_name" ng-model="ulc.newUser.last_name" required>
+                        <p style="color: red" ng-show="addUser.last_name.$error.required && ulc.submitted "> field have
+                            to
+                            be required </p>
+                    </td>
+                    <td><input type="email" name="email" ng-model="ulc.newUser.email">
+                    </td>
+
+                    <td>
+                        <button class="addButton" ng-click="ulc.createUser()"> Add user</button>
+                    </td>
+
+                </tr>
+
+            </table>
+
+
+        </form>
+    </div>
+
+    <div class="wrapPagination">
+        View <select ng-model="ulc.viewby" ng-change="ulc.setItemsPerPage(ulc.viewby)">
+        <option>3</option>
+        <option>5</option>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+    </select> records at a time.
+
+        <ul uib-pagination
+            total-items="ulc.bigTotalItems"
+            ng-model="ulc.bigCurrentPage"
+            max-size="ulc.maxSize"
+            class="pagination-sm"
+            boundary-links="true"
+            force-ellipses="true"
+            items-per-page="ulc.itemsPerPage">
+
+        </ul>
+    </div>
+
+
+</script>

@@ -1,0 +1,38 @@
+"data": [
+{
+"id": "8",
+"login": "user1",
+"password": "b1734c3c466b3ddcdd3b841d02a24b56",
+"hash": "488fc259a979295df7dc1035954963ca",
+"ip": "0",
+"name": null,
+"last_name": null
+},
+{
+"id": "9",
+"login": "user2",
+"password": "d079f41b77a39477b1547e6259d70ebd",
+"hash": "5243ee50fcd46b2fc4e146cf87c53192",
+"ip": "0",
+"name": null,
+"last_name": null
+},
+{
+"id": "10",
+"login": "user3",
+"password": "user3",
+"hash": null,
+"ip": "0",
+"name": null,
+"last_name": null
+},
+{
+"id": "12",
+"login": "userSERGe",
+"password": "2f7b52aacfbf6f44e13d27656ecb1f59",
+"hash": null,
+"ip": "0",
+"name": null,
+"last_name": null
+}
+],

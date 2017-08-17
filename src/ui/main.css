@@ -1,0 +1,416 @@
+
+body {
+    background-color: #f4f4f4;
+    font-family: 'Arial', Arial, Helvetica, sans-serif;
+    color: #718b99;
+    font-size: 17px;
+
+
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    /*color: initial;*/
+    cursor: default;
+    width: auto;
+    padding: 3px 5px;
+    background-color: #53c2d8;
+    color: #ffffff;
+
+    border-radius: 2px;
+    border: none;
+
+}
+
+table {
+    border-collapse: collapse;
+    background-color: rgba(222, 237, 255, 0.2);
+}
+
+td {
+    border: 1px solid #97919c;
+    text-align: center;
+    padding: 4px;
+}
+
+button {
+    background-color: #c94c48;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 2px;
+    padding: 4px 5px;
+
+}
+
+
+.baseBlock {
+    background-color: rgba(222, 237, 255, 0.2);
+    width: 100px;
+    height: 40px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #97919c;
+    line-height: 2.2em;
+}
+
+.singleBlock {
+    width: 314px;
+    text-align: center;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    margin: 5px auto;
+    line-height: 1.2em;
+    /*padding: 10px;*/
+    background-color: #f4f8ff;
+}
+
+.description {
+    width: 314px;
+    text-align: center;
+    border: 1px solid #c0c0c0;
+    border-radius: 2px;
+    margin: 5px auto;
+    line-height: 1.2em;
+    /*padding: 10px;*/
+    background-color: #f4f8ff;
+}
+
+.description p {
+    margin: 10px;
+}
+
+.singleBlock p {
+    margin: 10px;
+}
+
+.block {
+    background-color: rgba(222, 237, 255, 0.2);
+}
+
+.topic {
+    background-color: rgba(222, 237, 255, 0.2);
+
+}
+
+.block:hover {
+    background-color: #ffffff;
+}
+
+.wrapper {
+    width: 316px;
+    margin: 0 auto;
+}
+
+.blockWrapper {
+    width: 375px;
+    margin: 0 auto;
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 20px;
+    /*position: relative;*/
+    /*display:inline-block;*/
+}
+
+.testWrapper {
+    width: 650px;
+    margin: 0 auto;
+    padding: 20px;
+    /*position: relative;*/
+    /*display:inline-block;*/
+}
+
+/*.testQuestion {*/
+    /*font-size: 20px;*/
+    /*border: 1px solid #cdcdcd;*/
+    /*background-color: #ffffff;*/
+    /*width: 100%;*/
+    /*display: block;*/
+    /*height: 25px;*/
+/*}*/
+
+#testAnswer {
+
+    margin-bottom: 20px;
+    border: 1px solid #cdcdcd;
+    display: inline-block;
+    width: 640px;
+    height: 36px;
+    font-family: 'Arial', Arial, Helvetica, sans-serif;
+    padding: 1px;
+    font-size: 23px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+/*<span contenteditable="true" id="testAnswer" spanBind  class="baseInput">  </span> <br>*/
+
+
+.testQuestion {
+    font-size: 20px;
+    width: 100%;
+    display: block;
+    height: 30px;
+    margin: 0 10px 10px;
+}
+
+.red {
+    background-color: #bf482e;
+
+}
+
+.green {
+    background-color: #28bf34;
+
+
+}
+
+.startTests {
+    border: 1px solid #488f4c;
+    background: #57b163 none;
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 5px 14px;
+    width: 110px;
+    font-size: 17px;
+    position: relative;
+    right: -110px;
+}
+
+.addButton, .editButton, .deleteButton, .btn-primary{
+    border: 1px solid #488f4c;
+    background: #57b163 none;
+    color: #ffffff;
+    font-size: 17px;
+    /*border: none;*/
+
+}
+.addButton:hover, .btn-primary:hover{
+    background-color: rgba(87, 177, 99, 0.62);
+}
+
+
+
+.editButton{
+    background-color: #53c2d8;
+    color: #ffffff;
+    border: none;
+    font-size: 17px;
+
+
+}
+
+.editButton:hover{
+    background-color: rgba(83, 194, 216, 0.62);
+}
+
+.deleteButton, .btn-warning {
+    font-size: 17px;
+    background-color: #c94c48;
+    color: #ffffff;
+    border: none;
+}
+
+.deleteButton:hover, .btn-warning:hover{
+    background-color: rgba(201, 76, 72, 0.62);
+}
+
+
+
+.startTests:hover {
+    border: 1px solid #488f4c;
+    background: #5bbf6d;
+}
+
+.startTests:disabled {
+    border: 1px solid #c2c2c2;
+    background: #d8d8d8 none;
+}
+
+
+.hintButton {
+    right: -298px;
+
+}
+
+.nextButton {
+    right: -541px;
+
+}
+
+
+
+.lineTopic{
+    border-bottom: 1px solid #c0c0c0;
+    width: 70%;
+    margin-bottom: 20px;
+}
+
+.testTopic{
+    font-size: 25px;
+
+}
+
+.testError{
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    height: 70px;
+    line-height: 70px;
+    color: red;
+
+}
+.testError p {
+    /*display: none;*/
+    margin: 0;
+}
+
+
+
+
+
+::placeholder{
+    color: #718b99;
+}
+
+.good{
+    color: green;
+}
+
+.noGood{
+    color: red;
+}
+
+.baseInput{
+    color: #718b99;
+}
+
+th {
+    border: 1px solid #97919c;
+    text-align: center;
+    padding: 4px;
+}
+th:hover:not(:last-child) {
+    background-color: #f8fbff;
+    cursor: pointer;
+
+}
+
+/*.sortorder:after{*/
+    /*content: '\25b2';*/
+/*}*/
+
+
+.fa-caret-up {
+    margin-bottom: -2px;
+}
+
+.fa-caret-down, .fa-caret-up {
+    display: block;
+    font-size: 16px;
+    color: rgba(113, 139, 153, 0.25);
+}
+
+.brightTriangle{
+    color: rgba(113, 139, 153, 0.25);
+
+}
+.saturatedTriangle{
+    color: #718b99;
+}
+
+
+.wrapTriangle{
+    display: inline-block;
+    float: right;
+    margin: 0 5px;
+
+}
+
+th p{
+    margin: 5px -10px 0 0;
+    display: inline-block;
+}
+
+.wrapTable{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    /*float: left;*/
+
+}
+
+.wrapPagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+
+h1, h3{
+    text-align: center;
+}
+
+
+.blockEdit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*margin: auto;*/
+    /*float: left;*/
+
+}
+
+.fieldWrap{
+    border: 1px solid #c0c0c0;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 20px 20px 20px;
+}
+
+.nameField{
+    /*display: block;*/
+    /*float: left;*/
+}
+.descriptionField{
+    /*width: auto;*/
+    /*display: block;*/
+    /*float: left;*/
+    margin: auto;
+    /*display: flex;*/
+    /*display: inline-flex;*/
+
+}
+
+div input,textarea{
+    display: block;
+    margin: auto;
+}
+
+
+
+.fieldWrap input{
+    width: 100%;
+    /*margin-bottom: 10px;*/
+}
+.fieldWrap textarea{
+    margin-bottom: 20px;
+}
+
+#blockInput{
+    margin-bottom: 20px;
+}
+
+
+.buttonWrapper{
+    /*margin: 20px 0 0 0;*/
+}
+
+.wrapSelect{
+    margin-bottom: 20px;
+}

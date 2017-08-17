@@ -1,0 +1,31 @@
+<script type="text/ng-template" id="html/admin/test/test.htm">
+    <h1> test  </h1>
+    <!--{{tc.test}} <br>-->
+
+    <div class="blockEdit">
+        <div class="fieldWrap">
+            question: <input type="text" ng-model="tc.test.question"> <br>
+            answer: <input type="text" ng-model="tc.test.answer"><br>
+
+            <div class="wrapSelect">
+                block name:
+                <select
+                        ng-options=" block.name for block in tc.blocks "
+                        ng-model="tc.block">
+
+                </select>
+
+            </div>
+
+            <div class="buttonWrapper">
+                <button ng-click="tc.updateTest()">Update</button>
+                <!--<button ng-click="">Cancel</button>-->
+                <a href="#!/admin/test" class="button">Cancel</a>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</script>

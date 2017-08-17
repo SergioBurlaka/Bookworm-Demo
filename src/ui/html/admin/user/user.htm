@@ -1,0 +1,21 @@
+<script type="text/ng-template" id="html/admin/user/user.htm">
+    <h1> user  </h1>
+    <!--{{uc.user}}<br>-->
+
+    <div class="blockEdit">
+        <div class="fieldWrap">
+            login: <input type="text" ng-model="uc.user.login"> <br>
+            name: <input type="text" ng-model="uc.user.name"><br>
+            last_name: <input type="text" ng-model="uc.user.last_name"><br>
+            email: <input type="email" ng-model="uc.user.email"><br>
+
+
+            <div class="buttonWrapper">
+                <button ng-click="uc.updateUser()">Update</button>
+                <!--<button ng-click="">Cancel </button>-->
+                <a href="#!/admin/user" class="button">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+</script>

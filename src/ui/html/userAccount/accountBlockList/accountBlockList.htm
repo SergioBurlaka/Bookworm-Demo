@@ -1,0 +1,23 @@
+<script type="text/ng-template" id="html/userAccount/accountBlockList/accountBlockList.htm">
+
+    <h1> account block List </h1>
+
+    <div class="wrapper">
+        <div class="line topic">
+            <div class="baseBlock">block</div>
+            <div class="baseBlock">score</div>
+            <div class="baseBlock">completed</div>
+        </div>
+        <div class="line" ng-repeat=" x in uac.blocks">
+
+            <div class="baseBlock block" ng-click="uac.goToBlockView(x.id)" >
+                {{x.name}}
+            </div>
+
+            <div class="baseBlock score">{{x.score}}</div>
+            <div class="baseBlock passing" ng-class="x.passing ? 'green':  'red' ">{{x.passing}}</div>
+        </div>
+    </div>
+
+
+</script>

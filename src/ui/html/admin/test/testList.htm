@@ -1,0 +1,93 @@
+<script type="text/ng-template" id="html/admin/test/testList.htm">
+
+
+    <h1> test List </h1>
+
+
+    <div class="wrapTable">
+        <table>
+            <!--<caption>All tests</caption>-->
+
+            <tr>
+                <th ng-click="tlc.sortBy('answer')"> <p>answer</p>
+                    <div class="wrapTriangle">
+                        <i class="fa fa-caret-up"
+                           ng-class="tlc.addTriangleClass == 1 && tlc.columnName == 'answer' ? 'saturatedTriangle ': ''  "></i>
+                        <i class="fa fa-caret-down"
+                           ng-class="tlc.addTriangleClass == 0  && tlc.columnName == 'answer' ? 'saturatedTriangle ': ''  "></i>
+                    </div>
+                </th>
+                <th ng-click="tlc.sortBy('question')"> <p>question</p>
+                    <div class="wrapTriangle">
+                        <i class="fa fa-caret-up"
+                           ng-class="tlc.addTriangleClass == 1 && tlc.columnName == 'question' ? 'saturatedTriangle ': ''  "></i>
+                        <i class="fa fa-caret-down"
+                           ng-class="tlc.addTriangleClass == 0  && tlc.columnName == 'question' ? 'saturatedTriangle ': ''  "></i>
+                    </div>
+                </th>
+                <th ng-click="tlc.sortBy('blockName')"> <p>block name</p>
+                    <div class="wrapTriangle">
+                        <i class="fa fa-caret-up"
+                           ng-class="tlc.addTriangleClass == 1 && tlc.columnName == 'blockName' ? 'saturatedTriangle ': ''  "></i>
+                        <i class="fa fa-caret-down"
+                           ng-class="tlc.addTriangleClass == 0  && tlc.columnName == 'blockName' ? 'saturatedTriangle ': ''  "></i>
+                    </div>
+                </th>
+                <th>Action</th>
+            </tr>
+
+            <tr ng-repeat=" x in tlc.tests
+            | orderBy : tlc.columnName : false : tlc.comparator
+            | direction: tlc.direction
+            |slice: ((tlc.bigCurrentPage-1)*tlc.itemsPerPage): ((tlc.bigCurrentPage)*tlc.itemsPerPage) ">
+                <td>{{x.answer}}</td>
+                <td>{{x.question}}</td>
+                <td>{{tlc.blockNameByTest(x.block_id)}}</td>
+
+                <td>
+                    <button class="editButton" ng-click="tlc.goToBlockEdit(x.id)">Edit</button>
+                    <button  class="deleteButton" ng-click="tlc.openModalWindow(x.id)">Delete</button>
+                </td>
+
+            </tr>
+
+            <tr>
+                <td><input type="text" ng-model="tlc.newTest.answer"></td>
+                <td><input type="text" ng-model="tlc.newTest.question"> </td>
+                <td>
+                    <select
+                            ng-options=" block.name for block in tlc.blocks | filter: {name: undefined}  "
+                            ng-model="tlc.block "
+                    ></select>
+                </td>
+
+                <td><button class="addButton" ng-click="tlc.addTest()"> Add test</button></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="wrapPagination">
+        View <select ng-model="tlc.viewby" ng-change="tlc.setItemsPerPage(tlc.viewby)">
+        <option>3</option>
+        <option>5</option>
+        <option>10</option>
+        <option>20</option>
+        <option>30</option>
+        <option>40</option>
+        <option>50</option>
+    </select> records at a time.
+
+        <ul uib-pagination
+            total-items="tlc.bigTotalItems"
+            ng-model="tlc.bigCurrentPage"
+            max-size="tlc.maxSize"
+            class="pagination-sm"
+            boundary-links="true"
+            force-ellipses="true"
+            items-per-page="tlc.itemsPerPage">
+
+        </ul>
+    </div>
+
+</script>

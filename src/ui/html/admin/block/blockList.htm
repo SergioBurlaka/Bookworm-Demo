@@ -1,0 +1,75 @@
+<script type="text/ng-template" id="html/admin/block/blockList.htm">
+
+        <h1> block List </h1>
+        <div class="wrapTable">
+        <table >
+            <!--<caption>Blocks</caption>-->
+            <tr>
+                <th ng-click="blc.sortBy('name')" > <p>name</p>
+                    <div class="wrapTriangle">
+                        <i class="fa fa-caret-up"
+                           ng-class="blc.addTriangleClass == 1 && blc.columnName == 'name' ? 'saturatedTriangle ': ''  "></i>
+                        <i class="fa fa-caret-down"
+                           ng-class="blc.addTriangleClass == 0  && blc.columnName == 'name' ? 'saturatedTriangle ': ''  "></i>
+                    </div>
+                </th>
+                <th ng-click="blc.sortBy('description')"> <p>description</p>
+                    <div class="wrapTriangle">
+                        <i class="fa fa-caret-up"
+                           ng-class="blc.addTriangleClass == 1 && blc.columnName == 'description' ? 'saturatedTriangle ': ''  "></i>
+                        <i class="fa fa-caret-down"
+                           ng-class="blc.addTriangleClass == 0  && blc.columnName == 'description' ? 'saturatedTriangle ': ''  "></i>
+                    </div>
+                </th>
+                <th>Action</th>
+            </tr>
+
+            <tr ng-repeat=" x in blc.blocks
+            | orderBy : blc.columnName : false : blc.comparator
+            | direction: blc.direction
+            |slice: ((blc.bigCurrentPage-1)*blc.itemsPerPage): ((blc.bigCurrentPage)*blc.itemsPerPage) ">
+                <td>{{x.name}}</td>
+                <td>{{x.description}}</td>
+                <td>
+                    <button class="editButton" ng-click="blc.goToBlockEdit(x.id)">Edit</button>
+                    <button class="deleteButton" ng-click="blc.openModalWindow(x.id, x.name)">Delete</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="text" ng-model="blc.newBlock.name"></td>
+                <td><input type="text" ng-model="blc.newBlock.description"> </td>
+
+
+                <td><button class="addButton" ng-click="blc.addBlock()"> Add block</button></td>
+            </tr>
+
+        </table>
+    </div>
+
+        <div class="wrapPagination">
+            View <select ng-model="blc.viewby" ng-change="blc.setItemsPerPage(blc.viewby)">
+            <option>3</option>
+            <option>5</option>
+            <option>10</option>
+            <option>20</option>
+            <option>30</option>
+            <option>40</option>
+            <option>50</option>
+        </select> records at a time.
+
+            <ul uib-pagination
+                total-items="blc.bigTotalItems"
+                ng-model="blc.bigCurrentPage"
+                max-size="blc.maxSize"
+                class="pagination-sm"
+                boundary-links="true"
+                force-ellipses="true"
+                items-per-page="blc.itemsPerPage">
+
+            </ul>
+
+        </div>
+
+
+</script>
