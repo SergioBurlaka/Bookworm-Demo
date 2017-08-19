@@ -1,6 +1,6 @@
 #bookworm#
 
-Deeplearning service for pieces of meat.
+This application for learning foreign languages.
 
 ![Optional Text](../master/gifAndPicture/Fill_form_registration.gif)
 ![Optional Text](../master/gifAndPicture/createBlock.gif)
